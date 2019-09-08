@@ -1,1 +1,87 @@
-Will be back soon. In the process of Getting New Look
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+  background-color: white;
+  color: #333;
+  float: left;
+  border: none;
+  outline: 1px solid grey;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+  color: #333;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+#London {background-color:white;}
+#Paris {background-color:white;}
+#Tokyo {background-color:white;}
+#Oslo {background-color:white;}
+</style>
+</head>
+<body>
+
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div id="London" class="tabcontent">
+  <h1>HOME</h1>
+  <p>Welcome to AssertFail.com</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h1>ARTICLES</h1>
+  <p>Enjoy Exploring Articles</p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h1>VIDEOS</h1>
+  <p>Expore the VIDEOS here</p>
+</div>
+
+<div id="Oslo" class="tabcontent">
+  <h1>ABOUT</h1>
+  <p>Curious about AssertFail.com!</p>
+</div>
+
+<button class="tablink" onclick="openCity('London', this, '#f4901e')" id="defaultOpen">HOME</button>
+<button class="tablink" onclick="openCity('Paris', this, '#f4901e')">ARTICLES</button>
+<button class="tablink" onclick="openCity('Tokyo', this, '#f4901e')">VIDEOS</button>
+<button class="tablink" onclick="openCity('Oslo', this, '#f4901e')">ABOUT</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cityName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
